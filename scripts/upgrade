@@ -29,12 +29,7 @@ ynh_script_progression "Upgrading source files..."
 mkdir -p "$install_dir/tmp"
 ynh_setup_source --dest_dir="$install_dir/tmp"
 
-#=================================================
-# UPDATE A CONFIG FILE
-#=================================================
-ynh_script_progression "Updating $app's configuration files..."
-
-ynh_config_add --template=".env" --destination="$install_dir/.env"
+chown -R $app:$app "$install_dir"
 
 #=================================================
 # REAPPLY SYSTEM CONFIGURATION
@@ -57,6 +52,15 @@ popd
 
 mv $install_dir/tmp/dist/ $install_dir
 ynh_safe_rm "$install_dir/tmp"
+
+#=================================================
+# UPDATE A CONFIG FILE
+#=================================================
+ynh_script_progression "Updating $app's configuration files..."
+
+ynh_config_add --template=".env" --destination="$install_dir/.env"
+
+chown -R $app:www-data "$install_dir"
 
 #=================================================
 # END OF SCRIPT
