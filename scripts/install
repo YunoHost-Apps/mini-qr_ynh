@@ -35,7 +35,7 @@ pushd "$install_dir/tmp"
 	ynh_hide_warnings ynh_exec_as_app npm run build
 popd
 
-mv $install_dir/tmp/dist/ $install_dir
+mv $install_dir/tmp/dist/* $install_dir
 ynh_safe_rm "$install_dir/tmp"
 
 #=================================================
