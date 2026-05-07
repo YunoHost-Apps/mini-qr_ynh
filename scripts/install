@@ -25,13 +25,6 @@ ynh_setup_source --dest_dir="$install_dir/tmp"
 chown -R $app:$app "$install_dir"
 
 #=================================================
-# APP INITIAL CONFIGURATION
-#=================================================
-ynh_script_progression "Adding $app's configuration files..."
-
-ynh_config_add --template=".env" --destination="$install_dir/.env"
-
-#=================================================
 # SYSTEM CONFIGURATION
 #=================================================
 ynh_script_progression "Adding system configurations related to $app..."
@@ -51,6 +44,14 @@ popd
 
 mv $install_dir/tmp/dist/ $install_dir
 ynh_safe_rm "$install_dir/tmp"
+
+#=================================================
+# APP INITIAL CONFIGURATION
+#=================================================
+ynh_script_progression "Adding $app's configuration files..."
+
+ynh_config_add --template=".env" --destination="$install_dir/tmp/.env"
+
 chown -R $app:www-data "$install_dir"
 
 #=================================================
