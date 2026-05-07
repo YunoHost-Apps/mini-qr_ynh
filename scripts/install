@@ -22,6 +22,8 @@ ynh_script_progression "Setting up source files..."
 mkdir -p "$install_dir/tmp"
 ynh_setup_source --dest_dir="$install_dir/tmp"
 
+chown -R $app:$app "$install_dir"
+
 #=================================================
 # APP INITIAL CONFIGURATION
 #=================================================
@@ -49,6 +51,7 @@ popd
 
 mv $install_dir/tmp/dist/ $install_dir
 ynh_safe_rm "$install_dir/tmp"
+chown -R $app:www-data "$install_dir"
 
 #=================================================
 # END OF SCRIPT
