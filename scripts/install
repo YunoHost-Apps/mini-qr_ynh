@@ -50,7 +50,7 @@ ynh_safe_rm "$install_dir/tmp"
 #=================================================
 ynh_script_progression "Adding $app's configuration files..."
 
-ynh_config_add --template=".env" --destination="$install_dir/tmp/.env"
+ynh_config_add --template=".env" --destination="$install_dir/.env"
 
 chown -R $app:www-data "$install_dir"
 
