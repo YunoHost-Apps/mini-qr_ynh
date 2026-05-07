@@ -21,7 +21,7 @@ Create & scan cute qr codes easily
 
 
 ## Screenshots
-![Screenshot of Mini-qr](./doc/screenshots/example.jpg)
+![Screenshot of Mini-qr](./doc/screenshots/screenshot.png)
 
 ## 📦 Developer info
 
