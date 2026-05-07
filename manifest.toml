@@ -1,0 +1,66 @@
+#:schema https://raw.githubusercontent.com/YunoHost/apps/main/schemas/manifest.v2.schema.json
+
+packaging_format = 2
+
+id = "mini-qr"
+name = "Mini-qr"
+description.en = "Create & scan cute qr codes easily"
+description.fr = "Créez et scannez facilement de jolis codes QR"
+
+version = "0.28.0~ynh1"
+
+maintainers = ["eric_G"]
+
+[upstream]
+license = "GPL-3.0"
+website = "https://www.esteetey.dev/"
+demo = "https://mini-qr-code-generator.vercel.app/"
+code = "https://github.com/lyqht/mini-qr"
+
+[integration]
+yunohost = ">= 12.1.39"
+helpers_version = "2.1"
+architectures = "all"
+multi_instance = true
+
+ldap = false
+sso = false
+
+disk = "50M"
+ram.build = "50M"
+ram.runtime = "50M"
+
+[install]
+    [install.domain]
+    type = "domain"
+
+    [install.path]
+    type = "path"
+    default = "/qr"
+
+    [install.init_main_permission]
+    type = "group"
+    default = "visitors"
+
+[resources]
+
+    [resources.sources]
+
+    [resources.sources.main]
+    url = "https://github.com/lyqht/mini-qr/archive/refs/tags/v0.28.0.tar.gz"
+    sha256 = "bb173f27ca470124f9353721ce34056626351bc4c307d54a84610207419f2e5e"
+
+    autoupdate.strategy = "latest_github_tag"
+
+    [resources.system_user]
+
+    [resources.install_dir]
+
+    [resources.permissions]
+    main.url = "/"
+
+    [resources.apt]
+    packages = "php8.4-fpm"
+
+    [resources.nodejs]
+    version = "22"
