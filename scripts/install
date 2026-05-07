@@ -19,7 +19,8 @@ ynh_app_setting_set --key=php_post_max_size --value=50M
 ynh_script_progression "Setting up source files..."
 
 # Download, check integrity, uncompress and patch the source from manifest.toml
-ynh_setup_source --dest_dir="$install_dir"
+mkdir -p "$install_dir/tmp"
+ynh_setup_source --dest_dir="$install_dir/tmp"
 
 #=================================================
 # APP INITIAL CONFIGURATION
@@ -41,10 +42,13 @@ ynh_config_add_nginx
 #=================================================
 ynh_script_progression "Building $app... (this will take some time and resources!)"
 
-pushd "$install_dir"
+pushd "$install_dir/tmp"
 	ynh_hide_warnings ynh_exec_as_app npm install
 	ynh_hide_warnings ynh_exec_as_app npm run build
 popd
+
+mv $install_dir/tmp/dist/ $install_dir
+ynh_safe_rm "$install_dir/tmp"
 
 #=================================================
 # END OF SCRIPT
