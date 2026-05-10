@@ -7,7 +7,7 @@ name = "Mini-qr"
 description.en = "Create & scan cute qr codes easily"
 description.fr = "Créez et scannez facilement de jolis codes QR"
 
-version = "0.28.0~ynh1"
+version = "0.29.0~ynh1"
 
 maintainers = ["eric_G"]
 
@@ -47,8 +47,8 @@ ram.runtime = "50M"
     [resources.sources]
 
     [resources.sources.main]
-    url = "https://github.com/lyqht/mini-qr/archive/refs/tags/v0.28.0.tar.gz"
-    sha256 = "bb173f27ca470124f9353721ce34056626351bc4c307d54a84610207419f2e5e"
+    url = "https://github.com/lyqht/mini-qr/archive/refs/tags/v0.29.0.tar.gz"
+    sha256 = "699cb996804239541f48255d49008e06d77db027daecae2d006d0b5b5f1ed0bd"
 
     autoupdate.strategy = "latest_github_tag"
 
