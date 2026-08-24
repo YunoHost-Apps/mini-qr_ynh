@@ -18,7 +18,7 @@ demo = "https://mini-qr-code-generator.vercel.app/"
 code = "https://github.com/lyqht/mini-qr"
 
 [integration]
-yunohost = ">= 12.1.39"
+yunohost = ">= 12.1.40"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
@@ -60,4 +60,4 @@ ram.runtime = "50M"
     main.url = "/"
 
     [resources.nodejs]
-    version = "22"
+    version = "24"
