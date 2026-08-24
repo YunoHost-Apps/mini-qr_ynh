@@ -7,7 +7,7 @@ name = "Mini-qr"
 description.en = "Create & scan cute qr codes easily"
 description.fr = "Créez et scannez facilement de jolis codes QR"
 
-version = "0.32.0~ynh1"
+version = "0.33.0~ynh1"
 
 maintainers = ["eric_G"]
 
@@ -18,7 +18,7 @@ demo = "https://mini-qr-code-generator.vercel.app/"
 code = "https://github.com/lyqht/mini-qr"
 
 [integration]
-yunohost = ">= 12.1.39"
+yunohost = ">= 12.1.40"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
@@ -47,8 +47,8 @@ ram.runtime = "50M"
     [resources.sources]
 
     [resources.sources.main]
-    url = "https://github.com/lyqht/mini-qr/archive/refs/tags/v0.32.0.tar.gz"
-    sha256 = "c0fb22c0e899195874465b75cca02db4759eca7d897957ce10aba4beace4910a"
+    url = "https://github.com/lyqht/mini-qr/archive/refs/tags/v0.33.0.tar.gz"
+    sha256 = "27721dc58127a39a27d501b807e48d61abaddba70beb97f15eb25879c0234463"
 
     autoupdate.strategy = "latest_github_tag"
 
@@ -60,4 +60,4 @@ ram.runtime = "50M"
     main.url = "/"
 
     [resources.nodejs]
-    version = "22"
+    version = "24"
